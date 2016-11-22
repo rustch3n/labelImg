@@ -7,12 +7,19 @@ Forked from tzutalin/labelImg.
 - v next image
 - x prev image
 - d delete bbox
+- ctrl+d delte image
 
 ###Voctools:
 - make_voc.sh/split_data.py tools to format as VOC2007.
 
 
+###added features
+- delete image
+- show image index/total image info
 
+
+###already known issues
+- file list not sync with image deletion
 
 
 

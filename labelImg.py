@@ -691,6 +691,10 @@ class MainWindow(QMainWindow, WindowMixin):
             filename = self.settings['filename']
         filename = unicode(filename)
 
+        # Show progress
+        self.setWindowTitle("Labelimg (%d/%d) %s"%(self.mImgList.index(filename) + 1, len(self.mImgList), filename))
+
+
         # Tzutalin 20160906 : Add file list and dock to move faster 
         # Highlight the file item
         if filename and self.fileListWidget.count() > 0:
@@ -925,6 +929,7 @@ class MainWindow(QMainWindow, WindowMixin):
 
         
         print "delete", need2delete
+        os.system("rm " + need2delete)
 
 
     def openNextImg(self, _value=False):
