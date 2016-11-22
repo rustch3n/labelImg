@@ -163,6 +163,9 @@ class MainWindow(QMainWindow, WindowMixin):
         openPrevImg = action('&Prev Image', self.openPrevImg,
                 'x', 'prev', u'Open Prev')
 
+        deleteImg = action('&Delete Image', self.deleteImg,
+                'Ctrl+d', 'erase', u'Delete Image')
+
         save = action('&Save', self.saveFile,
                 'Ctrl+S', 'save', u'Save labels to file', enabled=False)
         saveAs = action('&Save As', self.saveFileAs,
@@ -299,7 +302,7 @@ class MainWindow(QMainWindow, WindowMixin):
 
         self.tools = self.toolbar('Tools')
         self.actions.beginner = (
-            open, opendir, openNextImg, openPrevImg, save, None, create, copy, delete, None,
+            open, opendir, openNextImg, openPrevImg, deleteImg, save, None, create, copy, delete, None,
             zoomIn, zoom, zoomOut, fitWindow, fitWidth)
 
         self.actions.advanced = (
@@ -894,6 +897,35 @@ class MainWindow(QMainWindow, WindowMixin):
             filename = self.mImgList[currIndex-1]
             if filename:
                 self.loadFile(filename)
+
+    def deleteImg(self, _value=False):
+        if not self.mayContinue():
+            return
+
+        if len(self.mImgList) <= 0:
+            return
+
+        if self.filename is None:
+            return
+
+        need2delete = self.filename
+        currIndex = self.mImgList.index(self.filename)
+        self.mImgList.remove(need2delete)
+
+        if currIndex >= len(self.mImgList):
+            #last one
+            currIndex = currIndex -1
+            self.closeFile()
+
+        if currIndex < 0:
+            #no image any more
+            pass
+        else:
+            self.loadFile(self.mImgList[currIndex])
+
+        
+        print "delete", need2delete
+
 
     def openNextImg(self, _value=False):
         # Proceding next image without dialog if having any label

@@ -1,5 +1,21 @@
 # LabelImg
 
+Forked from tzutalin/labelImg.
+
+###Shortcut:
+- c create bbox
+- v next image
+- x prev image
+- d delete bbox
+
+###Voctools:
+- make_voc.sh/split_data.py tools to format as VOC2007.
+
+
+
+
+
+
 [![Build Status](https://travis-ci.org/tzutalin/labelImg.png)](https://travis-ci.org/tzutalin/labelImg)
 
 LabelImg is a graphical image annotation tool.
