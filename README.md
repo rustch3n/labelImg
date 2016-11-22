@@ -1,6 +1,7 @@
 # LabelImg
+Customed image labeling and format toolkit for PCBeye project.
 
-Forked from tzutalin/labelImg.
+Forked from [tzutalin/labelImg](https://github.com/tzutalin/labelImg).
 
 ###Shortcut:
 - c create bbox
@@ -10,15 +11,15 @@ Forked from tzutalin/labelImg.
 - ctrl+d delte image
 
 ###Voctools:
-- make_voc.sh/split_data.py tools to format as VOC2007.
+- tools(make_voc.sh/split_data.py) to format data as VOC2007.
 
 
-###added features
+###Added features
 - delete image
-- show image index/total image info
+- show progress infomation
 
 
-###already known issues
+###Already known issues
 - file list not sync with image deletion
 
 

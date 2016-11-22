@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf8 -*-
+# (C) https://github.com/tzutalin/labelImg
+# (C) 2016 Unicall
+
 import _init_path
 import os.path
 import re
