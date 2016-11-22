@@ -158,10 +158,10 @@ class MainWindow(QMainWindow, WindowMixin):
                 'Ctrl+q', 'openAnnotation', u'Open Annotation')
 
         openNextImg = action('&Next Image', self.openNextImg,
-                'n', 'next', u'Open Next')
+                'v', 'next', u'Open Next')
 
         openPrevImg = action('&Prev Image', self.openPrevImg,
-                'p', 'prev', u'Open Prev')
+                'x', 'prev', u'Open Prev')
 
         save = action('&Save', self.saveFile,
                 'Ctrl+S', 'save', u'Save labels to file', enabled=False)
@@ -181,9 +181,9 @@ class MainWindow(QMainWindow, WindowMixin):
                 'Ctrl+J', 'edit', u'Move and edit Boxs', enabled=False)
 
         create = action('Create\nRectBox', self.createShape,
-                'Ctrl+N', 'new', u'Draw a new Box', enabled=False)
+                'c', 'new', u'Draw a new Box', enabled=False)
         delete = action('Delete\nRectBox', self.deleteSelectedShape,
-                'Delete', 'delete', u'Delete', enabled=False)
+                'd', 'delete', u'Delete', enabled=False)
         copy = action('&Duplicate\nRectBox', self.copySelectedShape,
                 'Ctrl+D', 'copy', u'Create a duplicate of the selected Box',
                 enabled=False)
